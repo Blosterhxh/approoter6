@@ -6,6 +6,8 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+  ExperienceProject,
+  ProfessionelItem
 } from './definitions';
 import { formatCurrency } from './utils';
 
@@ -32,12 +34,12 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices() {
   try {
-    const data = await sql<LatestInvoiceRaw[]>`
-      SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
-      FROM invoices
-      JOIN customers ON invoices.customer_id = customers.id
-      ORDER BY invoices.date DESC
-      LIMIT 5`;
+	const data = await sql<LatestInvoiceRaw[]>`
+  	 SELECT invoices.amount, customers.name, customers.image_url, customers.email
+ 	 FROM invoices
+  	 JOIN customers ON invoices.customer_id = customers.id
+  	 ORDER BY invoices.date DESC
+  	 LIMIT 5`;
 
     const latestInvoices = data.map((invoice) => ({
       ...invoice,
@@ -47,6 +49,54 @@ export async function fetchLatestInvoices() {
   } catch (error) {
     console.error('Database Error:', error);
     throw new Error('Failed to fetch the latest invoices.');
+  }
+}
+
+export async function fetchExperiences() {
+  try {
+	const data = await sql<ExperienceProject[]>`
+  	 SELECT titre, description, image, url
+ 	 FROM experience`;
+
+    const experiences = data.map((experienceproject) => ({
+      ...experienceproject
+    }));
+    return experiences;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the experiences.');
+  }
+}
+
+export async function fetchProfessionels() {
+  try {
+	const data = await sql<ProfessionelItem[]>`
+  	 SELECT titre, description, image, date
+ 	 FROM professionel`;
+
+    const professionels = data.map((professionelitem) => ({
+      ...professionelitem
+    }));
+    return professionels;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the professionels.');
+  }
+}
+
+export async function fetchEtudes() {
+  try {
+	const data = await sql<ProfessionelItem[]>`
+  	 SELECT titre, description, image, date
+ 	 FROM etudes`;
+
+    const professionels = data.map((professionelitem) => ({
+      ...professionelitem
+    }));
+    return professionels;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the etudes.');
   }
 }
 
@@ -159,7 +209,7 @@ export async function fetchInvoiceById(id: string) {
       // Convert amount from cents to dollars
       amount: invoice.amount / 100,
     }));
-
+    console.log(invoice);
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);
@@ -214,5 +264,23 @@ export async function fetchFilteredCustomers(query: string) {
   } catch (err) {
     console.error('Database Error:', err);
     throw new Error('Failed to fetch customer table.');
+  }
+}
+
+export async function fetchExperiencePetriNet() {
+  try {
+	const data = await sql<ExperienceProject[]>`
+  	 SELECT titre, description, image, url
+ 	 FROM experience
+         WHERE titre = 'PetriNet'
+        `;
+
+    const experiencePetriNet = data.map((experienceproject) => ({
+      ...experienceproject
+    }));
+    return experiencePetriNet;
+  } catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch the experiences.');
   }
 }

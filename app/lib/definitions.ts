@@ -86,3 +86,19 @@ export type InvoiceForm = {
   amount: number;
   status: 'pending' | 'paid';
 };
+
+export type ExperienceProject = {
+  id: string;
+  titre: string;
+  description: string;
+  image: string;
+  url : string;
+};
+
+export type ProfessionelItem = {
+  id: string;
+  titre: string;
+  description: string;
+  image: string;
+  date : string;
+};
