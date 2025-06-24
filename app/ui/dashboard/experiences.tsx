@@ -1,5 +1,4 @@
 import React from "react";
-import { ExperiencePoject } from '@/app/lib/definitions';
 import { fetchExperiences } from '@/app/lib/data';
 import { ExperienceItem } from "./experience-item";
 
