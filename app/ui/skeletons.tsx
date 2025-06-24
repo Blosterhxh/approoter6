@@ -6,9 +6,7 @@ import Image from "next/image";
 export function ExperienceSkeleton (){
 
   return (
-<div className="rounded-xl bg-gray-50 p-2 shadow-md"  
-    target="_blank"
-    rel="noopener"    
+<div className="rounded-xl bg-gray-50 p-2 shadow-md"      
     >
       <div className="flex flex-col items-center p-4">
         <div className="h-7 w-40 rounded-md bg-gray-400" />
