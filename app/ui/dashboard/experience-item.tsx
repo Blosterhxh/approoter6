@@ -21,6 +21,7 @@ export function ExperienceItem({ titre,description,image,url }: ExperienceProjec
              alt={titre}
              width={200}
              height={200}
+             alt="projet académique"
            />
            <div className="pointer-events-none absolute inset-0 rounded-xl ring-2 ring-black" />
         </div>

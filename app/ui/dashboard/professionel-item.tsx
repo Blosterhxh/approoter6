@@ -21,6 +21,7 @@ export function ProfessionelItem({ titre,description,image,date }: ProfessionelI
            src={image}
            width={50}
            height={50}
+           alt="expérience pro"
          />
       </div>
       <p className="font-medium">{titre}</p>
