@@ -1,12 +1,4 @@
-import React from "react";
-import { ExperienceProject } from '@/app/lib/definitions';
-import { fetchExperiencePetriNet } from '@/app/lib/data';
-import { ExperienceItem } from "./experience-item";
-import postgres from 'postgres';
-const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
-
 export default async function Page() {
-  const experienceproject = await fetchExperiencePetriNet();
   return (
     <div className="p-6 max-w-3xl mx-auto text-gray-800">
       <h2 className="text-xl font-bold underline mb-4">

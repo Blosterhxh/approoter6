@@ -13,7 +13,7 @@ export default function Presentation() {
   // NOTE: Uncomment this code in Chapter 7
 
   return (
-    <div className="rounded-xl bg-gray-100 p-4 mb-4 shadow-md">
+    <div className="rounded-xl bg-gray-50 p-4 mb-4 shadow-md">
       <div className="flex flex-row gap-4">
         <div className="flex-shrink-0">
           <Image
