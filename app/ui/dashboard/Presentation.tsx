@@ -1,16 +1,8 @@
-import { generateYAxis } from '@/app/lib/utils';
 import { lusitana } from '@/app/ui/fonts';
-import { Revenue } from '@/app/lib/definitions';
 import Image from 'next/image';
 
-// This component is representational only.
-// For data visualization UI, check out:
-// https://www.tremor.so/
-// https://www.chartjs.org/
-// https://airbnb.io/visx/
 
 export default function Presentation() {
-  // NOTE: Uncomment this code in Chapter 7
 
   return (
     <div className="rounded-xl bg-gray-50 p-4 mb-4 shadow-md">

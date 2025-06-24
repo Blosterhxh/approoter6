@@ -2,6 +2,8 @@
 import postgres from 'postgres';
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
+/*
+
 export default function Page() {
   async function create(formData: FormData) {
     'use server';
@@ -38,3 +40,5 @@ export default function Page() {
     </form>
   );
 }
+
+*/

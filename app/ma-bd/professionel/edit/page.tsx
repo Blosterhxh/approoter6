@@ -2,6 +2,8 @@
 import postgres from 'postgres';
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
+/*
+
 export default async function ExperiencesPage() {
   // Récupère toutes les expériences
   const result = await sql`
@@ -12,3 +14,5 @@ export default async function ExperiencesPage() {
   	<h3>Suppression de experience</h3>
   );
 }
+
+*/
