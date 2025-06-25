@@ -1,12 +1,14 @@
+'use client';
 import Image from "next/image";
-
+import { usePathname } from 'next/navigation';
 import type { ExperienceProject } from "@/app/lib/definitions";
 
 export function ExperienceItem({ titre,description,image,url }: ExperienceProject) {
+  const pathname = usePathname();
+  const experienceUrl = `${pathname}/experience/${url}`;
   return (
-
     <a className="group/link rounded-xl bg-gray-50 p-2 shadow-md"
-      href={url}
+      href={experienceUrl}
       target="_blank"
       rel="noopener"     
     >
